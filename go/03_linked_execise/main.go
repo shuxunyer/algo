@@ -140,17 +140,17 @@ func (this *LinkedList) DeleteBottomN(n int) {
 获取中间节点
 */
 func (this *LinkedList) FindMiddleNode() *ListNode {
-	if nil == this.head || nil == this.head.next {
-		return nil
-	}
-	if nil == this.head.next.next {
-		return this.head.next
-	}
+	 if nil ==this.head || nil ==this.head.next{
+	 	return nil
+	 }
+	 if this.head.next.next ==nil{
+	 	return this.head.next
+	 }
 
-	slow, fast := this.head, this.head
-	for nil != fast && nil != fast.next {
-		slow = slow.next
-		fast = fast.next.next
-	}
-	return slow
+	 fast ,slow := this.head,this.head
+	 for fast !=nil && fast.next !=nil{
+	 	slow =slow.next
+	 	fast =fast.next.next
+	 }
+	 return slow
 }

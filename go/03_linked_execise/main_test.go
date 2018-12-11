@@ -63,9 +63,13 @@ func TestDeleteBottomN(t *testing.T) {
 }
 
 func TestFindMiddleNode(t *testing.T) {
+	l.Print()
 	l.DeleteBottomN(1)
+	l.Print()
 	l.DeleteBottomN(1)
+	l.Print()
 	l.DeleteBottomN(1)
+	l.Print()
 	l.DeleteBottomN(1)
 	l.Print()
 	t.Log(l.FindMiddleNode())
