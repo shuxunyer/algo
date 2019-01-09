@@ -27,8 +27,8 @@
 15_tree/16_tree 二叉树
 二叉树的前序、中序、后序遍历
 PreOrderTraverse、InOrderTraverse、PostOrderTraverse
-15_tree 用for循环和数组实现
-16_tree 用递归实现的(思路更简单些)
+    15_tree 用for循环和数组实现
+    16_tree 用递归实现的(逻辑更清晰)
 
 17_tree 二叉查找树
 实现了二叉查找树的insert、find、delete
@@ -36,3 +36,7 @@ PreOrderTraverse、InOrderTraverse、PostOrderTraverse
 1）被删除的节点没有子节点
 2）被删除的节点只有一个子节点(左子节点/右子节点)
 3) 被删除的节点的左右子节点都存在
+
+
+
+
