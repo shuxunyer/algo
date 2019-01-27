@@ -41,22 +41,7 @@ func (this *Heap) Delete(index int) int {
 	this.data[index] = this.data[this.count]
 	this.count --
 	heapifyUpToDown(this.data, this.count, index)
-	/*parent := index
-	for 2*parent <= this.count {
-		maxIndex := parent
-		if 2*parent <= this.count && this.data[2*parent] > this.data[parent] {
-			maxIndex = 2 * parent
-		}
-		if 2*parent+1 <= this.count && this.data[2*parent+1] > this.data[parent] {
-			maxIndex = 2*parent + 1
-		}
-		if maxIndex == parent {
-			break
-		}
-		this.swap(parent, maxIndex)
-		//fmt.Printf("parent=%v,maxIndex=%v\n", parent, maxIndex)
-		parent = maxIndex
-	}*/
+
 	return returnData
 }
 
