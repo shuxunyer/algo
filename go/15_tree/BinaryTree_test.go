@@ -23,17 +23,16 @@ func init(){
 	r2.left = NewNode("J")
 }
 func TestBinaryTree_InOrderTraverse(t *testing.T) {
-	binaryTree.InOrderTraverse()
-	//H D I B J E A F C G
+	t.Log(binaryTree.InOrder())
+	// test and for correct results :H D I B J E A F C G
 }
 
-func TestBinaryTree_PreOrderTraverse(t *testing.T) {
-	binaryTree.PreOrderTraverse()
-	//A B D H I E J C F G
+func TestBinaryTree_PreOrder(t *testing.T) {
+	t.Log(binaryTree.PreOrder())
+	// test and for correct results :A B D H I E J C F G
 }
 
-/*func TestBinaryTree_PostOrderTraverse(t *testing.T) {
-	binaryTree.PostOrderTraverse()
-	//H I D J E B F G C A
-}*/
-
+func TestBinaryTree_PostOrderTraverse(t *testing.T) {
+	t.Log(binaryTree.PostOrder())
+	// test and for correct results :H I D J E B F G C A
+}

@@ -1,58 +1,70 @@
 package _15_tree
 
-import "fmt"
-
+/**
+	二叉树的遍历
+ */
 type BinaryTree struct {
-	root *TreeNode
+	root *Node
 }
 
-func NewBinaryTree(val interface{}) *BinaryTree {
-	return &BinaryTree{NewNode(val)}
+func NewBinaryTree(data interface{}) *BinaryTree {
+	return &BinaryTree{NewNode(data)}
 }
 
-func (binaryTree *BinaryTree) InOrderTraverse() {
-	p := binaryTree.root
-	s := NewArrayStack()
-	for p != nil || !s.IsEmpty() {
-		if p != nil {
-			s.Push(p)
-			p = p.left
-		} else {
-			temp := s.Pop().(*TreeNode)
-			fmt.Printf("%+v", temp.data)
-			p = temp.right
-		}
+func (tree *BinaryTree) PreOrder() []interface{}{
+	node := tree.root
+	if node == nil {
+		return nil
 	}
-	fmt.Println()
+	var datas []interface{}
+	preOrder(node,&datas)
+	return datas
 }
 
-func (binaryTree *BinaryTree) PreOrderTraverse() {
-	p := binaryTree.root
-	s := NewArrayStack()
-	for p != nil || !s.IsEmpty() {
-		if p!= nil {
-			fmt.Printf("%+v", p.data)
-			s.Push(p)
-			p = p.left
-		} else {
-			p = s.Pop().(*TreeNode).right
-		}
+func preOrder(node *Node,datas *[]interface{}) {
+	if node == nil {
+		return
 	}
-	fmt.Println()
+	*datas =append(*datas,node.data)
+	preOrder(node.left,datas)
+	preOrder(node.right,datas)
 }
 
-//error
-func (binaryTree *BinaryTree) PostOrderTraverse() {
-	p := binaryTree.root
-	s := NewArrayStack()
-	for p != nil || !s.IsEmpty() {
-		if p!= nil {
-			s.Push(p)
-			p = p.left
-		} else {
-			fmt.Printf("%+v", p.data)
-			p = s.Pop().(*TreeNode).right
-		}
+
+func (tree *BinaryTree) InOrder() []interface{}{
+	node := tree.root
+	if node == nil {
+		return nil
 	}
-	fmt.Println()
+	var datas []interface{}
+	inOrder(node,&datas)
+	return datas
+}
+
+func inOrder(node *Node,datas *[]interface{}) {
+	if node == nil {
+		return
+	}
+	inOrder(node.left,datas)
+	*datas =append(*datas,node.data)
+	inOrder(node.right,datas)
+}
+
+func (tree *BinaryTree) PostOrder() []interface{}{
+	node := tree.root
+	if node == nil {
+		return nil
+	}
+	var datas []interface{}
+	postOrder(node,&datas)
+	return datas
+}
+
+func postOrder(node *Node,datas *[]interface{}) {
+	if node == nil {
+		return
+	}
+	postOrder(node.left,datas)
+	postOrder(node.right,datas)
+	*datas =append(*datas,node.data)
 }

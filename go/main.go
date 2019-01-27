@@ -1,14 +1,27 @@
 package main
 
-import "fmt"
+import (
+	"math/rand"
+	"fmt"
+)
 
-func main() {
-	arr :=[]int{1,3,5,7}
-	fmt.Println(arr)
-	sWap(arr,1,2)
-	fmt.Println(arr)
+func Generate_Randnum() int{
+	//rand.Seed(time.Now().Unix())
+	rnd := rand.Intn(400)
 
+	fmt.Printf("rand is %v\n", rnd)
+
+	return rnd
 }
-func sWap(arr []int,i,j int){
-	arr[i], arr[j] = arr[j], arr[i]
+
+func main(){
+/*	var arr []int
+	for i:=0;i<10;i++{
+		ele :=Generate_Randnum()
+		arr =append(arr,ele)
+	}
+	fmt.Println(arr)*/
+
+	fmt.Println(1/10)
 }
+
