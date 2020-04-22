@@ -1,10 +1,17 @@
 package _1_array
 
 import (
+	"fmt"
 	"testing"
 )
 
 func TestInsert(t *testing.T) {
+	a := []int{1, 2, 3, 4, 5, 6}
+	a = append(a[:3], a[4:]...) // 删除开头1个元素
+
+	for _, ele := range a {
+		fmt.Println("a=", ele)
+	}
 	capacity := 10
 	arr := NewArray(uint(capacity))
 	for i := 0; i < capacity-5; i++ {
@@ -41,8 +48,8 @@ func TestDelete(t *testing.T) {
 		}
 	}
 	arr.Print()
-	i:=0
-	for j:=0; j <= 11; j++ {
+	i := 0
+	for j := 0; j <= 11; j++ {
 		_, err := arr.Delete(uint(i))
 		if nil != err {
 			t.Fatal(err)
@@ -50,7 +57,6 @@ func TestDelete(t *testing.T) {
 		arr.Print()
 	}
 }
-
 
 func TestFind(t *testing.T) {
 	capacity := 10
